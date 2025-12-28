@@ -1,0 +1,36 @@
+@import 'tailwindcss';
+
+/* define dark variant */
+@custom-variant dark (&:where(.dark &));
+
+/* light mode (default) */
+@theme {
+  --color-primary: #00a2dd;
+  --color-primary-dark: #0082b3;
+
+  --color-bg: #ffffff;
+  --color-bg-muted: #f5f7f9;
+
+  --color-text-primary: #0f172a;
+  --color-text-secondary: #475569;
+
+  --color-border: #dbe3e8;
+
+  --font-sans:
+    'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-serif: 'Playfair Display', Georgia, 'Times New Roman', serif;
+}
+
+/* dark mode */
+.dark {
+  --color-primary: #00a2dd;
+  --color-primary-dark: #38bdf8;
+
+  --color-bg: #0b1220;
+  --color-bg-muted: #111827;
+
+  --color-text-primary: #e5e7eb;
+  --color-text-secondary: #9ca3af;
+
+  --color-border: #1f2933;
+}
