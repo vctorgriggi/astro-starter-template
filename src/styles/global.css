@@ -6,6 +6,7 @@
 
 /* light mode (default) */
 @theme {
+  /* Colors Variables */
   --color-primary: #00a2dd;
   --color-primary-dark: #0082b3;
 
@@ -17,9 +18,13 @@
 
   --color-border: #dbe3e8;
 
+  /* Font Families */
   --font-sans:
-    'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  --font-serif: 'Playfair Display', Georgia, 'Times New Roman', serif;
+    'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    'Helvetica Neue', Arial, sans-serif;
+  --font-mono:
+    SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New',
+    monospace;
 }
 
 /* dark mode */
