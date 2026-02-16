@@ -7,16 +7,9 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://myapp.example.com',
-  integrations: [react(), icon(), sitemap()],
   vite: {
     plugins: [tailwindcss()],
   },
-  server: {
-    port: 4321,
-    host: true,
-  },
-  devToolbar: {
-    enabled: false,
-  },
+  site: 'https://myapp.example.com',
+  integrations: [react(), icon(), sitemap()],
 });
