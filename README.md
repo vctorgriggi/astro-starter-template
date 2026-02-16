@@ -17,7 +17,6 @@ Initial setup for Astro projects with React, Tailwind CSS, Prettier, and automat
 🎨 **Tailwind CSS 4** — Modern styling with dark mode support  
 ✨ **Prettier** — Consistent formatting with Astro and Tailwind plugins  
 🔄 **Auto-sorting** — Imports and classes organized automatically  
-🎯 **CVA + clsx** — Type-safe component variants  
 📦 **Lucide Icons** — Beautiful, customizable icons  
 🗺️ **Sitemap** — Auto-generated sitemap for SEO
 
@@ -54,14 +53,12 @@ Open [http://localhost:4321](http://localhost:4321) 🎉
 │   │   └── consts.ts        # Site metadata
 │   ├── layouts/             # Page layouts
 │   │   └── Layout.astro     # Root layout
-│   ├── lib/                 # Utility functions
-│   │   └── utils.ts         # cn() helper for class merging
 │   ├── pages/               # File-based routing
 │   │   └── index.astro      # Home page
 │   ├── styles/              # Global styles
 │   │   └── global.css       # Tailwind + theme variables
 │   └── types.ts             # TypeScript types
-├── .prettierrc.mjs          # Prettier configuration
+├── .prettierrc              # Prettier configuration
 ├── astro.config.mjs         # Astro configuration
 └── tsconfig.json            # TypeScript configuration
 ```
@@ -74,9 +71,8 @@ Open [http://localhost:4321](http://localhost:4321) 🎉
 **UI Library** → [React 19](https://react.dev/)  
 **Styling** → [Tailwind CSS 4](https://tailwindcss.com/)  
 **Formatting** → [Prettier](https://prettier.io/) + [prettier-plugin-astro](https://github.com/withastro/prettier-plugin-astro) + [prettier-plugin-tailwindcss](https://github.com/tailwindlabs/prettier-plugin-tailwindcss)  
-**Utilities** → [clsx](https://github.com/lukeed/clsx) + [tailwind-merge](https://github.com/dcastil/tailwind-merge) + [CVA](https://cva.style/)  
 **Icons** → [Lucide React](https://lucide.dev/) + [astro-icon](https://github.com/natemoo-re/astro-icon)  
-**Font** → [Inter](https://rsms.me/inter/) via Fontsource  
+**Font** → [Inter](https://rsms.me/inter/) via Google Fonts  
 **Language** → [TypeScript](https://www.typescriptlang.org/)
 
 ---
@@ -85,21 +81,20 @@ Open [http://localhost:4321](http://localhost:4321) 🎉
 
 ### Prettier
 
-```js
-// .prettierrc.mjs
-export default {
-  semi: true,
-  singleQuote: true,
-  tabWidth: 2,
-  plugins: [
-    'prettier-plugin-astro',
-    'prettier-plugin-astro-organize-imports',
-    'prettier-plugin-tailwindcss',
-  ],
-};
+```json
+{
+  "semi": true,
+  "singleQuote": true,
+  "tabWidth": 2,
+  "plugins": [
+    "prettier-plugin-astro",
+    "prettier-plugin-tailwindcss",
+    "prettier-plugin-astro-organize-imports"
+  ]
+}
 ```
 
-Automatically sorts imports and Tailwind classes for consistent code.
+Automatically sorts imports and Tailwind classes for consistent code. Note: `prettier-plugin-astro-organize-imports` must be the last plugin in the list.
 
 ### TypeScript
 
@@ -170,20 +165,6 @@ Sorted automatically via `prettier-plugin-tailwindcss` when running `npm run pre
 
 ---
 
-## 🧩 Utilities
-
-### cn() Helper
-
-Combine class names with conflict resolution:
-
-```tsx
-import { cn } from '@/lib/utils';
-
-<div className={cn('px-4 py-2', isActive && 'bg-primary')} />;
-```
-
----
-
 ## 🔧 Customization
 
 ### Site Metadata
@@ -202,7 +183,7 @@ export const SITE: Site = {
 
 ### Prettier Config
 
-Edit `.prettierrc.mjs` to adjust formatting preferences.
+Edit `.prettierrc` to adjust formatting preferences.
 
 ### Astro Config
 
